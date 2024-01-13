@@ -3,6 +3,8 @@ import { catsReducer } from './reducers/cats';
 
 export const store = configureStore({
     reducer: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         cats: catsReducer,
     },
 });

@@ -52,7 +52,7 @@ const fetchCatsActionMiddleware = () => {
         dispatch(catsLoading());
 
         try {
-          const catImages = await getRandomCats();
+          const catImages: Cat[] = await getRandomCats();
           dispatch(catsSuccess(catImages));
         } catch (err) {
           dispatch(catsFail());

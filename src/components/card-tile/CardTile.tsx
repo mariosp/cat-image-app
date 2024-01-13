@@ -1,6 +1,10 @@
 import { Card, CardBody, Image } from "@chakra-ui/react";
 
-export const CardTile = ({imageUrl}) => {
+export interface CardTileProps {
+    imageUrl: string,
+}
+
+export const CardTile = ({imageUrl}: CardTileProps) => {
     
     return (
         <Card w={['10rem', '15rem']} h={['10rem', '15rem']} m={[5, 10]}>

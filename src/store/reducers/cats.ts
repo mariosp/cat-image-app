@@ -12,7 +12,7 @@ const initState: CatState = {
     error: false,
 };
 
-export const catsReducer = (state: CatState = initState, action: CatsDispatchTypes): CatState=> {
+export const catsReducer = (state: CatState = initState, action: CatsDispatchTypes): CatState => {
     switch (action.type) {
         case CATS_LOADING:
             return {
