@@ -6,10 +6,10 @@ import { store } from './store/store.ts';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ChakraProvider } from '@chakra-ui/react';
-import { theme } from './config/chakra-theme.tsx';
+import { theme } from './config/chakra-theme.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ChakraProvider theme={theme}>
     <BrowserRouter>
       <Provider store={store}>
@@ -17,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       </Provider>
     </BrowserRouter>
     </ChakraProvider>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

@@ -7,9 +7,9 @@ export const Header = ()=> {
 
     return(
         <TabList h={[20, 16]} bg='primary.300'>
-            <Box position="absolute" top="0" left="0" h='inherit' w='inherit'>
+            <Box position="absolute" zIndex="2" top="0" left="0" h='inherit' w='inherit'>
                 <Image
-                    h={['6.6rem', '5.3rem']}
+                    h={['6rem', '5rem']}
                     src={catLogo}
                     alt='Cat logo'
                 />

@@ -40,8 +40,11 @@ export const Shell = () => {
         <Tabs 
           isLazy
           h="100%"
+          maxH="100%"
           align={align}
           index={tabIndex}
+          display="flex"
+          flexFlow='column'
           onChange={handleTabsChange}
           textAlign={'center'}
         >
