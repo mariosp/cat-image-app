@@ -1,4 +1,4 @@
-import { Tabs } from "@chakra-ui/react";
+import { Tabs, useBreakpointValue } from "@chakra-ui/react";
 import { Header } from "./header/Header";
 import { Content } from "./content/Content";
 import {  useEffect, useState } from "react";
@@ -6,10 +6,19 @@ import { useLocation } from "react-router-dom";
 
 
 export const Shell = () => {
+  const { pathname } = useLocation();
+  const align = useBreakpointValue<"end" | "center" | "start">(
+    {
+      base: 'end',
+      md: 'center',
+    },
+    {
+      fallback: 'end',
+    },
+  )
+
   const [tabIndex, setTabIndex] = useState<number>(0);
 
-  const location = useLocation();
-  const { pathname } = location;
 
   useEffect(()=>{
     if(pathname.startsWith('/breeds')){
@@ -28,8 +37,15 @@ export const Shell = () => {
 
   return (
       <>
-        <Tabs isLazy h="100%" index={tabIndex} onChange={handleTabsChange}>
-          <Header />
+        <Tabs 
+          isLazy
+          h="100%"
+          align={align}
+          index={tabIndex}
+          onChange={handleTabsChange}
+          textAlign={'center'}
+        >
+          <Header/>
           <Content/>
         </Tabs>
       </>

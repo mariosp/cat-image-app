@@ -8,7 +8,7 @@ const CatBreeds = React.lazy(() => import('../../cat-breeds/CatBreeds'));
 export const Content = () => {
 
     return(
-        <TabPanels height={['100%']}>
+        <TabPanels height={['100%']} bg='secondary.100'>
             <Routes>
                 <Route path="/" element={<Navigate to="/cats" />} />
                 <Route
