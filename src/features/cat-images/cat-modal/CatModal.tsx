@@ -78,7 +78,7 @@ export const CatModal = () => {
             <Box bottom="0" right="0" position="absolute" h="20%" w="100%" borderRadius="5" display="flex" justifyContent="flex-end" alignItems="center">
                 { breedId &&
                     <Link to={`/breeds/${breedId}`}>
-                        <Tag size="lg" variant='solid' bg="primary.300" mr="2">
+                        <Tag size="lg" variant='solid' bg="primary.500" mr="2">
                                 <TagLabel>{breedName}</TagLabel>
                                 <TagRightIcon as={InfoIcon} />
                         </Tag>
@@ -88,9 +88,8 @@ export const CatModal = () => {
             <Tooltip label='Copy url'>
                 <IconButton
                     onClick={handleOnCopyUrlClick}
-                    
                     mr="2"
-                    bg="primary.300"
+                    bg="primary.500"
                     icon={<LinkIcon />}
                 />
             </Tooltip>
@@ -98,7 +97,7 @@ export const CatModal = () => {
             <Tooltip label='Add to favorites'>
                 <IconButton
                     mr="2"
-                    bg="primary.300"
+                    bg="primary.500"
                     icon={<StarIcon />}
                 />
             </Tooltip>
