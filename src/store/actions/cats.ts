@@ -10,7 +10,7 @@ export interface Cat {
     url: string,
     width: number,
     height: number,
-    breeds: string[],
+    breeds: Record<string, string>[],
 }
 
 export interface CatsSuccess {

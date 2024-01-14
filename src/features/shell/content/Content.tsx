@@ -19,7 +19,9 @@ export const Content = () => {
                             <CatImages />
                         </React.Suspense>
                     }
-                />
+                >
+                    <Route path=':catId' element={<CatImages />} />
+                </Route>
                 <Route
                     path="breeds"
                     element={
