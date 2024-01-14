@@ -16,3 +16,11 @@ export const getCatById = (catId: string) =>{
         }
     }).then(res=> res.json());
 }
+
+export const getBreeds = () =>{
+    return fetch(CATS_API + `/v1/breeds`,{
+        headers: {
+            'x-api-key': 'live_9TTWA5cDL60nA8Y2OeqbLaN2pH5b1l3sgIGTi0WRBempWXZeIHkDRrHEULB1mwmq',
+        }
+    }).then(res=> res.json());
+}

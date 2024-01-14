@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { Loader } from "../../components/loader/Loader";
 import { CardTile } from "../../components/card-tile/CardTile";
 import { CatModal } from "./cat-modal/CatModal";
+import { Link } from "react-router-dom";
 
 export const CatImages = ()=> {
     const dispatch = useAppDispatch();
@@ -19,7 +20,11 @@ export const CatImages = ()=> {
         dispatch(fetchCatsAction());
     }
 
-    const renderCardItems = () => cats.map(({id, url})=> <CardTile key={id} id={id} imageUrl={url}/>)
+    const renderCardItems = () => cats.map(({id, url})=> (
+        <Link to={`/cats/${id}`} key={id}>
+            <CardTile imageUrl={url}/>
+        </Link>
+    ));
 
     return(
         <Box justifyContent={'center'} alignItems={'center'} h="100%">
