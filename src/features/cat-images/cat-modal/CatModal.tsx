@@ -90,7 +90,8 @@ export const CatModal = () => {
                     onClick={handleOnCopyUrlClick}
                     mr="2"
                     bg="primary.500"
-                    icon={<LinkIcon />}
+                    icon={<LinkIcon />} 
+                    aria-label="url button"                
                 />
             </Tooltip>
 
@@ -99,6 +100,7 @@ export const CatModal = () => {
                     mr="2"
                     bg="primary.500"
                     icon={<StarIcon />}
+                    aria-label="favorites button"
                 />
             </Tooltip>
                 
