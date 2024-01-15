@@ -1,5 +1,6 @@
 import { Dispatch } from "redux";
 import { getRandomCats } from "../../services/api";
+import { Breed } from "./breeds";
 
 export const CATS_LOADING = 'CATS_LOADING';
 export const CATS_SUCCESS = 'CATS_SUCCESS';
@@ -10,7 +11,7 @@ export interface Cat {
     url: string,
     width: number,
     height: number,
-    breeds: Record<string, string>[],
+    breeds: Breed[],
 }
 
 export interface CatsSuccess {

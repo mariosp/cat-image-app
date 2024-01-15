@@ -29,7 +29,9 @@ export const Content = () => {
                             <CatBreeds />
                         </React.Suspense>
                     }
-                />
+                >
+                    <Route path=':breedId' element={<CatBreeds />} />
+                </Route>
             </Routes>
         </TabPanels>
     )

@@ -5,6 +5,7 @@ import { CardTile } from "../../components/card-tile/CardTile";
 import { Box, Flex } from "@chakra-ui/react";
 import { Loader } from "../../components/loader/Loader";
 import { Link } from "react-router-dom";
+import { BreedModal } from "./breed-modal/BreedModal";
 
 export const CatBreeds = ()=> {
     const dispatch = useAppDispatch();
@@ -29,6 +30,7 @@ export const CatBreeds = ()=> {
                     {renderCardItems()}
                 </Flex>  
             }
+            <BreedModal />
         </Box>
     )
 };

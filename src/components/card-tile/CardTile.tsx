@@ -4,12 +4,15 @@ import { Loader } from "../loader/Loader";
 export interface CardTileProps {
     imageUrl: string,
     text?: string;
+    tileSize?: "big" | "small";
 }
 
-export const CardTile = ({imageUrl, text}: CardTileProps) => {
+export const CardTile = ({imageUrl, text, tileSize = "big" }: CardTileProps) => {
+    const sizeWH = tileSize === "big" ? ["10rem", "15rem"] : ["5rem", "5rem"];
+    const marginSize = tileSize === "big" ? [5, 10] : [2, 3];
 
     return (
-        <Card w={['10rem', '15rem']} h={['10rem', '15rem']} m={[5, 10]} bg="primary.300">
+        <Card w={sizeWH} h={sizeWH} m={marginSize} bg="primary.300">
             <CardBody w="inherit" h="inherit" m="0" p="0">
                 <Image 
                     h="100%" 

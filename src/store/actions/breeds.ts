@@ -11,7 +11,7 @@ export interface Breed {
     name: string;
     life_span?: string;
     origin?: string;
-    weight: {imperial: string; metrics: string;}
+    weight: {imperial: string; metric: string;}
     wikipedia_url?: string;
     image: {url: string};
 }

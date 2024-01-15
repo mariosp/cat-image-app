@@ -65,14 +65,14 @@ export const CatModal = () => {
             breedId = cat?.breeds[0]?.id;
         }
 
-        return(
+    return(
         <Box h="100%">
             <ModalCloseButton bg="secondary.100" />
             <Image 
                 src={cat?.url}
                 h="100%"
                 w="100%"
-                objectFit="fill"
+                objectFit="cover"
                 borderRadius="5"
             />
             <Box bottom="0" right="0" position="absolute" h="20%" w="100%" borderRadius="5" display="flex" justifyContent="flex-end" alignItems="center">
@@ -102,20 +102,8 @@ export const CatModal = () => {
                     icon={<StarIcon />}
                     aria-label="favorites button"
                 />
-            </Tooltip>
-                
-                
+            </Tooltip>  
             </Box>
-            {/* <Box h="20%" w="100%" mt="5" bg="secondary.100" borderRadius="5" display="flex" justifyContent="space-between" alignItems="center">
-                <Link to={`/breeds/${'test'}`}>
-                    <Tag size="lg" variant='solid' bg="primary.300">
-                        <TagLabel>Blue</TagLabel>
-                        <TagRightIcon as={InfoIcon} />
-                    </Tag>
-                </Link>
-
-                
-            </Box> */}
         </Box>)
     }
 
