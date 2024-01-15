@@ -1,6 +1,6 @@
 import { Box, Divider, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Tag, TagLabel, useDisclosure, Text, Link as LinkChakra, Flex } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getCatsByBreedId } from "../../../services/api";
 import { Cat } from "../../../store/actions/cats";
 import { Loader } from "../../../components/loader/Loader";
@@ -85,9 +85,7 @@ export const BreedModal = () => {
     }
 
     const renderCardItems = (cats: Cat[]) => cats.map(({id, url})=> (
-        <Link to={`/cats/${id}`} key={id}>
-            <CardTile tileSize="small" imageUrl={url}/>
-        </Link>
+            <CardTile key={id} id={id} imageUrl={url} path="cats" tileSize="small"/>
     ));
 
     return(

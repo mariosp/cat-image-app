@@ -4,7 +4,6 @@ import { fetchBreedsAction } from "../../store/actions/breeds";
 import { CardTile } from "../../components/card-tile/CardTile";
 import { Box, Flex } from "@chakra-ui/react";
 import { Loader } from "../../components/loader/Loader";
-import { Link } from "react-router-dom";
 import { BreedModal } from "./breed-modal/BreedModal";
 
 export const CatBreeds = ()=> {
@@ -17,9 +16,7 @@ export const CatBreeds = ()=> {
     }, []);
     
     const renderCardItems = () => breeds.map(({id, image, name}) =>(
-        <Link to={`/breeds/${id}`} key={id}>
-            <CardTile imageUrl={image?.url} text={name}/>
-        </Link>
+            <CardTile key={id} id={id} imageUrl={image?.url} text={name} path="breeds"/>
     ));
 
     return(
