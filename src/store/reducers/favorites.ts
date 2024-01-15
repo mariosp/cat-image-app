@@ -1,5 +1,5 @@
 import { Cat } from "../actions/cats";
-import { ADD_FAVORITE, FavoritesDispatchTypes, REMOVE_FAVORITE } from "../actions/favorites";
+import { ADD_FAVORITE, FavoritesDispatchTypes, REMOVE_ALL_FAVORITE, REMOVE_FAVORITE } from "../actions/favorites";
 
 export interface FavoritesState {
     cats: Cat[],
@@ -25,6 +25,11 @@ export const favoritesReducer = (state: FavoritesState = initState, action: Favo
             return {
                 ...state,
                 cats: afterRemoval,
+            }
+        case REMOVE_ALL_FAVORITE:
+            return {
+                ...state,
+                cats: [],
             }
         default:
             return state;
