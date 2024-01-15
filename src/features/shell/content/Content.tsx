@@ -5,6 +5,7 @@ import { Loader } from "../../../components/loader/Loader";
 
 const CatImages = React.lazy(() => import('../../cat-images/CatImages'));
 const CatBreeds = React.lazy(() => import('../../cat-breeds/CatBreeds'));
+const Favorites = React.lazy(() => import('../../favorites/Favorites'));
 
 export const Content = () => {
 
@@ -31,6 +32,16 @@ export const Content = () => {
                     }
                 >
                     <Route path=':breedId' element={<CatBreeds />} />
+                </Route>
+                <Route
+                    path="favorites"
+                    element={
+                        <React.Suspense fallback={<Loader/>}>
+                            <Favorites />
+                        </React.Suspense>
+                    }
+                >
+                    <Route path=':catId' element={<Favorites />} />
                 </Route>
             </Routes>
         </TabPanels>

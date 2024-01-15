@@ -5,16 +5,26 @@ import { getCatById } from "../../../services/api";
 import { Cat } from "../../../store/actions/cats";
 import { Loader } from "../../../components/loader/Loader";
 import { InfoIcon, LinkIcon, StarIcon } from "@chakra-ui/icons";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { addFavorite, removeFavorite } from "../../../store/actions/favorites";
 
+export interface CatModalType {
+    actionFrom: "cats" | "favorites",
+}
 
-export const CatModal = () => {
+export const CatModal = ({ actionFrom }: CatModalType) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const toast = useToast();
     let { catId } = useParams();
     const navigate = useNavigate();
     const { onCopy, value, setValue } = useClipboard("");
+    
+    const dispatch = useAppDispatch();
+    const favoriteCats = useAppSelector(state=> state.favorites.cats);
     const [cat, setCat] = useState<Cat | null>();
     const [isLoading, setLoading] = useState(false);
+
+    const isFavorite = !!favoriteCats.find(favCat=> favCat.id === cat?.id);
 
     useEffect(()=> {
         if(catId) {
@@ -50,11 +60,17 @@ export const CatModal = () => {
 
     const handleOnClose = ()=>{
         setCat(null);
-        navigate('/cats');
+        navigate(`/${actionFrom}`);
     }
 
     const handleOnCopyUrlClick = ()=> {
-        setValue(window.location.href);
+        setValue(`${window.location.host}/cats/${cat?.id}`);
+    }
+
+    const handleAddToFav = ()=> {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        isFavorite ? dispatch(removeFavorite(cat.id)) : dispatch(addFavorite(cat));
     }
 
     const renderCatDetails = ()=> {
@@ -95,10 +111,12 @@ export const CatModal = () => {
                 />
             </Tooltip>
 
-            <Tooltip label='Add to favorites'>
+            <Tooltip label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}>
                 <IconButton
+                    onClick={handleAddToFav}
                     mr="2"
                     bg="primary.500"
+                    color={isFavorite ? "yellow": "white"}
                     icon={<StarIcon />}
                     aria-label="favorites button"
                 />

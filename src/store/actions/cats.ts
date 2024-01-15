@@ -9,9 +9,9 @@ export const CATS_FAIL = 'CATS_FAIL';
 export interface Cat {
     id: string,
     url: string,
-    width: number,
-    height: number,
-    breeds: Breed[],
+    width?: number,
+    height?: number,
+    breeds?: Breed[],
 }
 
 export interface CatsSuccess {

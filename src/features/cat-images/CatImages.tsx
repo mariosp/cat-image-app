@@ -45,7 +45,7 @@ export const CatImages = ()=> {
                     Load more cats
                 </Button>
             </Box>
-            <CatModal />
+            <CatModal actionFrom="cats"/>
         </Box>
     )
 };
