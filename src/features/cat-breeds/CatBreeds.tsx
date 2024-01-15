@@ -11,7 +11,6 @@ export const CatBreeds = ()=> {
     const {breeds, isLoading} = useAppSelector(state=> state.breeds);
 
     useEffect(()=>{
-        console.log("CREATE BREEDS COMPONENT");
         !breeds.length && dispatch(fetchBreedsAction());
     }, []);
     
@@ -22,7 +21,7 @@ export const CatBreeds = ()=> {
     return(
         <Box justifyContent={'center'} alignItems={'center'} h="100%">
             {isLoading && !breeds.length && <Loader/>}
-            {breeds.length && 
+            {!!breeds.length && 
                 <Flex direction='row' justifyContent='center' alignItems='flex-start' wrap='wrap' flexBasis="33.333333%">
                     {renderCardItems()}
                 </Flex>  

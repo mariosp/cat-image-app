@@ -24,8 +24,8 @@ export const CatImages = ()=> {
 
     return(
         <Box justifyContent={'center'} alignItems={'center'} h="100%">
-            {isLoading && !cats.length && <Loader/>}
-            {cats.length && 
+            { isLoading && !cats.length && <Loader/> }
+            {!!cats.length && 
                 <Flex direction='row' justifyContent='center' alignItems='flex-start' wrap='wrap' flexBasis="33.333333%">
                     {renderCardItems()}
                 </Flex>

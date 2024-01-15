@@ -1,5 +1,4 @@
 import { Box, Image, Tab, TabList } from '@chakra-ui/react';
-import './Header.module.css';
 import { Link } from 'react-router-dom';
 import catLogo from '../../../assets/cat-tongue-logo.png';
 

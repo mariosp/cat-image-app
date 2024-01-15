@@ -16,7 +16,7 @@ export const Favorites = ()=> {
 
     const handleRemoveAll = ()=> {
         // @ts-ignore
-        dispatch(removeAllFavorites())
+        dispatch(removeAllFavorites());
     }
 
     return(

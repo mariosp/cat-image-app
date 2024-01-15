@@ -1,6 +1,7 @@
 import { Box, Card, CardBody, Image, Tag } from "@chakra-ui/react";
 import { Loader } from "../loader/Loader";
 import { Link } from "react-router-dom";
+import noImage from "../../assets/no-image.png";
 
 export interface CardTileProps {
     imageUrl: string,
@@ -21,8 +22,8 @@ export const CardTile = ({imageUrl, text, tileSize = "big", id, path }: CardTile
                     <Image 
                         h="100%" 
                         w="100%"
-                        objectFit='cover'
-                        src={imageUrl}
+                        objectFit={imageUrl? 'cover': 'contain'}
+                        src={imageUrl || noImage}
                         borderRadius="5"
                         fallback={<Loader/>}
                     />
