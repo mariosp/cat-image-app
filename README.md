@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Cat-image-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3bb3421-4a17-40b0-91a0-a77bf8d6df41/deploy-status)](https://app.netlify.com/sites/cat-images/deploys)
 
-Currently, two official plugins are available:
+##### Deployed on netlify : https://cat-images.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Development environment
 
-## Expanding the ESLint configuration
+Install
+`npm install`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+In order to serve the application run:
+`npm run dev`
 
-- Configure the top-level `parserOptions` property like this:
+frontend: http://127.0.0.1:5173
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Application features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Cats tab
+- Shows random cat images
+- You can load more images by pressing the 'load more cats' button
+- Open image in a modal with the options to 
+a) Copy the link b) Add image as a favorite b) Show and navigate to breed cat if breed info is available
+
+
+### Breeds tab
+- Shows all cat breeds
+- You can view more details about a breed
+- wiki link and info about the breed
+
+### Favorites tab
+- View favorites cats
+- Remove cat image from favorites
+- Remove all cat images from favorites
+- Persist favorites in LocalStorage
+
