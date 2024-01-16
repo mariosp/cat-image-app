@@ -3,7 +3,7 @@ import { CardTile } from "../../components/card-tile/CardTile";
 import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { CatModal } from "../cat-images/cat-modal/CatModal";
 import { StarIcon } from "@chakra-ui/icons";
-import { removeAllFavorites } from "../../store/actions/favorites";
+import { removeAllFavorites, removeFavorite } from "../../store/actions/favorites";
 
 
 export const Favorites = ()=> {
@@ -11,12 +11,17 @@ export const Favorites = ()=> {
     const { cats } = useAppSelector(state=> state.favorites);
 
     const renderCardItems = () => cats.map(({id, url})=> (
-            <CardTile key={id} id={id} imageUrl={url} path="favorites"/>
+            <CardTile key={id} id={id} imageUrl={url} path="favorites" onCrosshandler={()=> handleOnCrossButton(id)}/>
     ));
 
     const handleRemoveAll = ()=> {
         // @ts-ignore
         dispatch(removeAllFavorites());
+    }
+
+    const handleOnCrossButton = (id: string)=>{
+        // @ts-ignore
+        dispatch(removeFavorite(id));
     }
 
     return(

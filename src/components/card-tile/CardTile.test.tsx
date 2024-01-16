@@ -20,3 +20,11 @@ it("Should show text when text property is set", () => {
 
     expect(window.location.pathname).toBe("/cats/test");
 });
+
+it("Should show cross button when onCrosshandler is present", () => {
+    render(<BrowserRouter><CardTile text="text test" imageUrl='/test' id="test" path="cats" onCrosshandler={()=> {}} /></BrowserRouter>);
+
+    const button = screen.getByLabelText('Remove favorite');
+
+    expect(button).toBeDefined();
+});

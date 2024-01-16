@@ -1,7 +1,8 @@
-import { Box, Card, CardBody, Image, Tag } from "@chakra-ui/react";
+import { Box, Card, CardBody, IconButton, Image, Tag } from "@chakra-ui/react";
 import { Loader } from "../loader/Loader";
 import { Link } from "react-router-dom";
 import noImage from "../../assets/no-image.png";
+import { CloseIcon } from "@chakra-ui/icons";
 
 export interface CardTileProps {
     imageUrl: string,
@@ -9,9 +10,10 @@ export interface CardTileProps {
     tileSize?: "big" | "small";
     id: string;
     path: "cats" | "breeds" | "favorites";
+    onCrosshandler?: ()=> void 
 }
 
-export const CardTile = ({imageUrl, text, tileSize = "big", id, path }: CardTileProps) => {
+export const CardTile = ({imageUrl, text, tileSize = "big", id, path, onCrosshandler }: CardTileProps) => {
     const sizeWH = tileSize === "big" ? ["10rem", "15rem"] : ["5rem", "5rem"];
     const marginSize = tileSize === "big" ? [5, 10] : [2, 3];
 
@@ -36,6 +38,22 @@ export const CardTile = ({imageUrl, text, tileSize = "big", id, path }: CardTile
                     }
                 </Link>
             </CardBody>
+            {onCrosshandler && 
+                <IconButton
+                    position="absolute"
+                    top="-3"
+                    right="-3"
+                    size='sm'
+                    onClick={onCrosshandler}
+                    isRound={true}
+                    variant="outline"
+                    colorScheme="tertiary"
+                    bg="white"
+                    aria-label='Remove favorite'
+                    fontSize='15'
+                    icon={<CloseIcon />}
+                />
+            }
         </Card>
     )
 }
