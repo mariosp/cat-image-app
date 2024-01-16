@@ -9,6 +9,9 @@
 Install
 `npm install`
 
+To run tests
+`npm run test`
+
 In order to serve the application run:
 `npm run dev`
 
