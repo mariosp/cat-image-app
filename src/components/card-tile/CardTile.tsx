@@ -16,7 +16,7 @@ export const CardTile = ({imageUrl, text, tileSize = "big", id, path }: CardTile
     const marginSize = tileSize === "big" ? [5, 10] : [2, 3];
 
     return (
-        <Card w={sizeWH} h={sizeWH} m={marginSize} bg="primary.300">
+        <Card data-testid="cardTile" w={sizeWH} h={sizeWH} m={marginSize} bg="primary.300">
             <CardBody w="inherit" h="inherit" m="0" p="0">
                 <Link to={`/${path}/${id}`}>
                     <Image 
