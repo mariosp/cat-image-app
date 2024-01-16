@@ -68,7 +68,6 @@ export const CatModal = ({ actionFrom }: CatModalType) => {
     }
 
     const handleAddToFav = ()=> {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         isFavorite ? dispatch(removeFavorite(cat.id)) : dispatch(addFavorite(cat));
     }

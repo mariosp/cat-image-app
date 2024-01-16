@@ -15,7 +15,7 @@ export const Header = ()=> {
             </Box>
             <Tab as={Link} to="/cats">Cats</Tab>
             <Tab as={Link} to="/breeds">Breeds</Tab>
-            <Tab as={Link} to="/favorites">Favorite</Tab>
+            <Tab as={Link} to="/favorites">Favorites</Tab>
         </TabList>
     )
 };

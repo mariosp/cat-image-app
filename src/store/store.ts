@@ -13,10 +13,8 @@ const favoritesPersistConfig = {
 
 export const store = configureStore({
     reducer: {
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         cats: catsReducer,
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         breeds: breedsReducer,
         favorites: persistReducer(favoritesPersistConfig, favoritesReducer) as unknown as Reducer<FavoritesState, UnknownAction, FavoritesState>,
