@@ -9,7 +9,6 @@ import { theme } from './config/chakra-theme.ts';
 import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  // <React.StrictMode>
     <ChakraProvider theme={theme}>
     <BrowserRouter>
       <Provider store={store}>
@@ -18,6 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         </PersistGate>
       </Provider>
     </BrowserRouter>
-    </ChakraProvider>
-  // </React.StrictMode>,
+    </ChakraProvider>,
 )
