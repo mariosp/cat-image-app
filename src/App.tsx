@@ -1,4 +1,3 @@
-import './App.css'
 import { Shell } from './features/shell/Shell';
 
 function App() {
