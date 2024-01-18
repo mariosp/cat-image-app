@@ -34,7 +34,7 @@ export const BreedModal = () => {
 
     const fetchCatsByBreedId = async (breedId: string) => {
         try{
-            const catData = await getCatsByBreedId(breedId);
+            const catData = await getCatsByBreedId(breedId, 10);
             setCats(catData);
             setLoading(false);
         } catch {
